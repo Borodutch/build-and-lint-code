@@ -3,15 +3,14 @@ description: Action that installs dependencies, builds and lints the code
 branding:
   icon: 'check'
   color: 'green'
-jobs:
-  build-and-lint-code:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v2
-      - name: Install modules
-        run: yarn
-      - name: Build code
-        run: yarn build
-      - name: Lint code
-        run: yarn lint
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - uses: c-hive/gha-yarn-cache@v2
+    - name: Install modules
+      run: yarn
+    - name: Build code
+      run: yarn build
+    - name: Lint code
+      run: yarn lint
