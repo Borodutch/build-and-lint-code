@@ -1,7 +1,8 @@
 name: Build and lint code
 description: Action that installs dependencies, builds and lints the code
-icon: check
-color: green
+branding:
+  icon: 'check'
+  color: 'green'
 
 on:
   pull_request:
