@@ -7,9 +7,7 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v2
-      shell: bash
     - uses: c-hive/gha-yarn-cache@v2
-      shell: bash
     - name: Install modules
       run: yarn
       shell: bash
